@@ -1,0 +1,104 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 210 20% 96%;
+    --foreground: 210 20% 12%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 210 20% 12%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 210 20% 12%;
+
+    --primary: 207 65% 37%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 204 82% 93%;
+    --secondary-foreground: 207 65% 25%;
+
+    --muted: 210 15% 95%;
+    --muted-foreground: 210 10% 50%;
+
+    --accent: 204 82% 63%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 210 15% 85%;
+    --input: 210 15% 85%;
+    --ring: 204 82% 63%;
+
+    --radius: 0.75rem;
+
+    /* Custom tokens */
+    --highlight: 204 82% 93%;
+    --highlight-foreground: 207 65% 25%;
+    --footer-bg: 210 25% 12%;
+    --footer-foreground: 210 15% 90%;
+    --gradient-start: 207 65% 37%;
+    --gradient-end: 204 82% 63%;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+  .section-padding {
+    @apply py-16 md:py-20 px-4 md:px-8;
+  }
+
+  .gradient-bg {
+    background: linear-gradient(135deg, hsl(var(--primary) / 0.08), hsl(var(--accent) / 0.15));
+  }
+
+  .gradient-bg-strong {
+    background: linear-gradient(135deg, hsl(var(--primary) / 0.15), hsl(var(--accent) / 0.25));
+  }
+
+  .card-shadow {
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  }
+
+  .card-shadow-hover {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
+  }
+
+  .header-shadow {
+    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.06);
+  }
+}
+
+@keyframes pulse-btn {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.03); }
+}
+
+.animate-pulse-btn {
+  animation: pulse-btn 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
